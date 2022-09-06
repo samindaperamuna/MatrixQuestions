@@ -1,4 +1,4 @@
-package org.fifthgen.matrixquestions.question;
+package org.fifthgen.matrixquestions.survey;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

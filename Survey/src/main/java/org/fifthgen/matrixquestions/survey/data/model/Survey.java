@@ -1,4 +1,4 @@
-package org.fifthgen.matrixquestions.question.data.model;
+package org.fifthgen.matrixquestions.survey.data.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,9 +12,13 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @Entity
-public class Question implements Serializable {
+public class Survey implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    private String name;
+
+    private String description;
 }

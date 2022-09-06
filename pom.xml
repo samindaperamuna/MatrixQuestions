@@ -10,7 +10,7 @@
     <version>${revision}</version>
 
     <modules>
-        <module>Question</module>
+        <module>Survey</module>
         <module>Answer</module>
     </modules>
 

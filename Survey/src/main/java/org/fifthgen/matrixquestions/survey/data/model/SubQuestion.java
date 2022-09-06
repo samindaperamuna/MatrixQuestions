@@ -1,4 +1,4 @@
-package org.fifthgen.matrixquestions.question.data.model;
+package org.fifthgen.matrixquestions.survey.data.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

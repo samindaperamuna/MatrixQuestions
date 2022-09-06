@@ -1,17 +1,23 @@
 package org.fifthgen.matrixquestions.answer.service;
 
+import lombok.AllArgsConstructor;
 import org.fifthgen.matrixquestions.answer.data.model.UserResponse;
 import org.fifthgen.matrixquestions.answer.data.repository.UserResponseRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@AllArgsConstructor
 public class UserResponseService {
 
-    @Autowired
     private UserResponseRepository userResponseRepository;
 
-    public void saveUserResponse(UserResponse userResponse) {
-        userResponseRepository.save(userResponse);
+    public List<UserResponse> getAllResponses() {
+        return userResponseRepository.findAll();
+    }
+
+    public UserResponse saveUserResponse(UserResponse userResponse) {
+        return userResponseRepository.save(userResponse);
     }
 }
