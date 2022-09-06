@@ -1,7 +1,7 @@
-package org.fifthgen.matrixquestions.question.model;
+package org.fifthgen.matrixquestions.answer.data.model;
 
 public enum Answer {
-    VERY_TRY,
+    VERY_TRUE,
     MOSTLY_TRUE,
     SOMEWHAT_TRUE,
     A_LITTLE_TRUE,
