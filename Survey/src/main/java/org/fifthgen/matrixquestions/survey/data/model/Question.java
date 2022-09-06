@@ -4,17 +4,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Entity
-public class Question implements Serializable {
-
-    @Id
-    @ManyToOne
-    private Survey survey;
+@IdClass(QuestionId.class)
+public class Question {
 
     @Id
     private int qid;
+
+    @Id
+    private int surveyId;
+
+    @Column(length = 500)
+    private String value;
+
+    @Transient
+    private List<SubQuestion> subQuestions;
 }
