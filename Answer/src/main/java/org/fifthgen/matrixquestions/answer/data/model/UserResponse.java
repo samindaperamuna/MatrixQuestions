@@ -3,10 +3,8 @@ package org.fifthgen.matrixquestions.answer.data.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -14,11 +12,13 @@ import javax.persistence.Id;
 public class UserResponse {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    private int surveyId;
 
     private String username;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Answer answer;
-
+    @Transient
+    private List<Answer> answers;
 }

@@ -20,12 +20,6 @@ public class SurveyController {
 
     private SurveyService surveyService;
 
-    @GetMapping
-    public List<Survey> getSurveys() {
-        log.info("listing all surveys");
-        return surveyService.getAllSurveys();
-    }
-
     @PostMapping()
     public Survey createSurvey(@RequestBody SurveyCreationRequest surveyCreationRequest) {
         log.info("new surveyCreationRequest : {}", surveyCreationRequest);
@@ -49,8 +43,15 @@ public class SurveyController {
     }
 
     @GetMapping("/{id}")
+    @ResponseBody
     public Survey getSurvey(@PathVariable int id) {
         log.info("listing survey questions for id {}", id);
         return surveyService.getSurveyForId(id);
+    }
+
+    @GetMapping
+    public List<Survey> getSurveys() {
+        log.info("listing all surveys");
+        return surveyService.getAllSurveys();
     }
 }

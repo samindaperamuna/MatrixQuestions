@@ -2,6 +2,8 @@ package org.fifthgen.matrixquestions.answer.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.fifthgen.matrixquestions.answer.data.model.Answer;
+import org.fifthgen.matrixquestions.answer.data.model.AnswerId;
 import org.fifthgen.matrixquestions.answer.data.model.UserResponse;
 import org.fifthgen.matrixquestions.answer.service.UserResponseService;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +18,13 @@ public class UserResponseController {
 
     private UserResponseService userResponseService;
 
-    @GetMapping("/answers")
+    @GetMapping
     public List<UserResponse> listUserResponses() {
         log.info("listing all user responses");
         return userResponseService.getAllResponses();
     }
 
-    @PostMapping("/answers")
+    @PostMapping
     public UserResponse saveUserResponse(@RequestBody UserResponse userResponse) {
         log.info("new matrix question : {}", userResponse);
         return userResponseService.saveUserResponse(userResponse);

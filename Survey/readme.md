@@ -31,3 +31,6 @@ Sample POST request body
     ]
 }
 ```
+
+To fetch a specific survey with questions
+`<server>:<port>/api/v1/survey/{id}`

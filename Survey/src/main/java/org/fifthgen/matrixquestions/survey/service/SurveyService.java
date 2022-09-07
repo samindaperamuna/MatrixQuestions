@@ -20,7 +20,17 @@ public class SurveyService {
     private SubQuestionRepository subQuestionRepository;
 
     public Survey getSurveyForId(int id) {
-        return surveyRepository.getById(id);
+        Survey survey = surveyRepository.getById(id);
+        List<Question> questions = questionRepository.findBySurveyId(id);
+
+        for (Question question: questions) {
+            List<SubQuestion> subQuestions = subQuestionRepository.findByQid(question.getQid());
+            question.setSubQuestions(subQuestions);
+        }
+
+        survey.setQuestions(questions);
+
+        return survey;
     }
 
     public Survey addSurvey(Survey survey) {
